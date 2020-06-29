@@ -30,10 +30,10 @@ public class BatchInversions implements IBatchConverter {
         for (File f : dr.selectedFiles()) {
             ImageResource inImage = new ImageResource(f);
             ImageResource inversions = makeInversion(inImage);
-            inversions.setFileName(f.getName());
+            inversions.setFileName("inverted-"+f.getName());
             convertedList.add(inversions);
         }
-        new ImageSaver().doSave(convertedList,"inverted");
+        new ImageSaver().doSave(convertedList);
     }
 
 }

@@ -36,10 +36,10 @@ public class BatchGrayScale implements IBatchConverter {
         for (File f : dr.selectedFiles()) {
             ImageResource inImage = new ImageResource(f);
             ImageResource gray = makeGray(inImage);
-            gray.setFileName(f.getName());
+            gray.setFileName("gray-"+f.getName());
             convertedList.add(gray);
         }
-        new ImageSaver().doSave(convertedList,"gray");
+        new ImageSaver().doSave(convertedList);
     }
 
 

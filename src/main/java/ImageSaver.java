@@ -10,11 +10,10 @@ import java.util.List;
 
 public class ImageSaver {
 
-    public void doSave(List<ImageResource> imageResourceList, String fNameStart) {
+    public void doSave(List<ImageResource> imageResourceList) {
         for (ImageResource image : imageResourceList) {
             String fname = image.getFileName();
-            String newName = fNameStart + "-" + fname;
-            image.setFileName(newName);
+            image.setFileName(fname);
             image.draw();
             image.save();
         }
