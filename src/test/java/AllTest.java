@@ -4,11 +4,20 @@
  * @author Samet Burç
  */
 
-import edu.duke.FileResource;
-import org.junit.Before;
 import org.junit.Test;
 
 public class AllTest {
 
+    IBatchConverter grayScale=new BatchGrayScale();
+    IBatchConverter inversions=new BatchInversions();
 
+    @Test
+    public void testGrayScale(){
+        grayScale.selectAndConvert();
+    }
+
+    @Test
+    public void testInversions(){
+        inversions.selectAndConvert();
+    }
 }
